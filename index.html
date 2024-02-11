@@ -30,72 +30,92 @@
 <body>
     <h1>Multiple Zeta Value Calculator</h1>
     <form id="inputForm">
-        <label for="input_a">a:</label>
-        <input type="number" id="input_a" min="1" value="2"><br>
-        <label for="input_b">b:</label>
-        <input type="number" id="input_b" min="1" value="2"><br>
-        <label for="input_c">c:</label>
-        <input type="number" id="input_c" min="1" value="2"><br>
-        <label for="input_d">d:</label>
-        <input type="number" id="input_d" min="1" value="2"><br>
-        <label for="input_e">e:</label>
-        <input type="number" id="input_e" min="1" value="2"><br>
-        <label for="input_f">f:</label>
-        <input type="number" id="input_f" min="1" value="2"><br>
-        <label for="input_g">g:</label>
-        <input type="number" id="input_g" min="1" value="2"><br>
-        <label for="input_h">h:</label>
-        <input type="number" id="input_h" min="1" value="2"><br>
-        <label for="input_i">i:</label>
-        <input type="number" id="input_i" min="1" value="2"><br>
-        <label for="input_j">j:</label>
-        <input type="number" id="input_j" min="1" value="2"><br>
-        <label for="input_k">k:</label>
-        <input type="number" id="input_k" min="1" value="2"><br>
-        <label for="input_l">l:</label>
-        <input type="number" id="input_l" min="1" value="2"><br>
-        <label for="input_m">m:</label>
-        <input type="number" id="input_m" min="1" value="2"><br>
-        <label for="input_n">n:</label>
-        <input type="number" id="input_n" min="1" value="2"><br>
-        <label for="input_o">o:</label>
-        <input type="number" id="input_o" min="1" value="2"><br>
-        <label for="input_p">p:</label>
-        <input type="number" id="input_p" min="1" value="2"><br>
-        <label for="input_q">q:</label>
-        <input type="number" id="input_q" min="1" value="2"><br>
-        <label for="input_r">r:</label>
-        <input type="number" id="input_r" min="1" value="2"><br>
-        <label for="input_s">s:</label>
-        <input type="number" id="input_s" min="1" value="2"><br>
-        <label for="input_t">t:</label>
-        <input type="number" id="input_t" min="1" value="2"><br>
-        <label for="input_u">u:</label>
-        <input type="number" id="input_u" min="1" value="2"><br>
-        <label for="input_v">v:</label>
-        <input type="number" id="input_v" min="1" value="2"><br>
-        <label for="input_w">w:</label>
-        <input type="number" id="input_w" min="1" value="2"><br>
-        <label for="input_x">x:</label>
-        <input type="number" id="input_x" min="1" value="2"><br>
-        <label for="input_y">y:</label>
-        <input type="number" id="input_y" min="1" value="2"><br>
-        <label for="input_z">z:</label>
-        <input type="number" id="input_z" min="1" value="2"><br>
+        <label for="input_a">s1 :</label>
+        <input type="number" id="input_a" min="1" value="1"><br>
+        <label for="input_b">s2 :</label>
+        <input type="number" id="input_b" min="1" value="1"><br>
+        <label for="input_c">s3 :</label>
+        <input type="number" id="input_c" min="1" value="1"><br>
+        <label for="input_d">s4 :</label>
+        <input type="number" id="input_d" min="1" value="1"><br>
+        <label for="input_e">s5 :</label>
+        <input type="number" id="input_e" min="1" value="1"><br>
+        <label for="input_f">s6 :</label>
+        <input type="number" id="input_f" min="1" value="1"><br>
+        <label for="input_g">s7 :</label>
+        <input type="number" id="input_g" min="1" value="1"><br>
+        <label for="input_h">s8 :</label>
+        <input type="number" id="input_h" min="1" value="1"><br>
+        <label for="input_i">s9 :</label>
+        <input type="number" id="input_i" min="1" value="1"><br>
+        <label for="input_j">s10:</label>
+        <input type="number" id="input_j" min="1" value="1"><br>
+        <label for="input_k">precision:</label>
+        <input type="number" id="input_k" min="20" value="512"><br>
+
     </form>
     <button onclick="calculate()">Calculate</button>
     <p id="result"></p>
 
     <script>
+        function fib(n){
+            let Fibarray = new Array[n];
+
+            Fibarray[0] = new BigNumber(1);
+            Fibarray[1] = new BigNumber(1);
+            for(let y0 = 2; y0 < n; y0++){
+                Fibarray[y0] = Fibarray[y0 - 1].plus(Fibarray[y0 - 2]);
+            }
+
+            
+
+            return Fibarray;
+        }
+
+
         function calculate() {
             var inputs = document.getElementById("inputForm").getElementsByTagName("input");
             var results = [];
 
+            let d = 2;//配列の次元
+            let n = inputs[10].value;//精度(配列の大きさ)
+
+            let Fibarray = fib(n);
+            //Fibarrayが完成する
+
+            if(d === 2){//2次元配列の時
+
+                let y1=0;
+                let y2=0;
+                let y3;
+                let y4;
+                let y5;
+                let s1 = inputs[0].value;
+                let s2 = inputs[1].value;
+                let sum = new BigNumber(0);
+                for(y1 = 1; y1 <= n; y1++){
+                    for(y2 = y1 + 1; y2 <= n; y2++){
+                        y3 = BigNumber(Fibarray[y1-1]).pow(s1);    //F_y1 ^ s1
+                        y4 = BigNumber(Fibarray[y2-1]).pow(s2);    //F_y2 ^ s2
+                        y5 = BigNumber(y3).times(y4);
+                        y5 = BigNumber(1).div(y5);
+                        sum = sum.plus(y5);
+                    }
+                }
+                results.push(sum.toString());
+            }
+
+
+
+
+            
+            //こんなにinputはいらない
+            
+            
+            /*
             for (var i = 0; i < inputs.length; i++) {
                 var n = inputs[i].value;
-                var sum =
-
- new BigNumber(0);
+                var sum = new BigNumber(0);
                 var k = 100;
 
                 for (var j = 1; j <= k; j++) {
@@ -104,7 +124,9 @@
                 }
 
                 results.push(sum.toString());
-            }
+            }*/
+
+
 
             var resultString = "";
             for (var i = 0; i < results.length; i++) {
