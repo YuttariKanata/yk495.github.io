@@ -82,6 +82,7 @@
                     flag++;
                 }
             }
+            alert(flag);
 
             d = flag;
 
@@ -98,8 +99,8 @@
                 let s1 = inputs[0].value;
                 let s2 = inputs[1].value;
                 let sum = new BigNumber(0);
-                for(y1 = 1; y1 < n; y1++){
-                    for(y2 = y1 + 1; y2 < n; y2++){
+                for(y1 = 1; y1 <= n; y1++){
+                    for(y2 = y1 + 1; y2 <= n; y2++){
                         y3 = Fibarray[y1-1].pow(s1);    //F_y1 ^ s1
                         y4 = Fibarray[y2-1].pow(s2);    //F_y2 ^ s2
                         y5 = y3.times(y4);
@@ -124,9 +125,9 @@
                 let s3 = inputs[2].value;
 
                 let sum = new BigNumber(0);
-                for(i1 = 1; i1 < n; i1++){
-                    for(i2 = i1 + 1; i2 < n; i2++){
-                        for(i3 = i2 + 1; i3 < n; i3++){
+                for(i1 = 1; i1 <= n; i1++){
+                    for(i2 = i1 + 1; i2 <= n; i2++){
+                        for(i3 = i2 + 1; i3 <= n; i3++){
                             y1 = Fibarray[i1-1].pow(s1);    //F_i1 ^ s1
                             y2 = Fibarray[i2-1].pow(s2);    //F_i2 ^ s2
                             y2 = Fibarray[i3-1].pow(s3);    //F_i2 ^ s2
