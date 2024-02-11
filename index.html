@@ -31,25 +31,25 @@
     <h1>Multiple Zeta Value Calculator</h1>
     <form id="inputForm">
         <label for="input_a">s1 :</label>
-        <input type="number" id="input_a" min="2" value="1"><br>
+        <input type="number" id="input_a" min="0" value="2"><br>
         <label for="input_b">s2 :</label>
-        <input type="number" id="input_b" min="3" value="1"><br>
+        <input type="number" id="input_b" min="0" value="3"><br>
         <label for="input_c">s3 :</label>
-        <input type="number" id="input_c" min="0" value="1"><br>
+        <input type="number" id="input_c" min="0" value="0"><br>
         <label for="input_d">s4 :</label>
-        <input type="number" id="input_d" min="0" value="1"><br>
+        <input type="number" id="input_d" min="0" value="0"><br>
         <label for="input_e">s5 :</label>
-        <input type="number" id="input_e" min="0" value="1"><br>
+        <input type="number" id="input_e" min="0" value="0"><br>
         <label for="input_f">s6 :</label>
-        <input type="number" id="input_f" min="0" value="1"><br>
+        <input type="number" id="input_f" min="0" value="0"><br>
         <label for="input_g">s7 :</label>
-        <input type="number" id="input_g" min="0" value="1"><br>
+        <input type="number" id="input_g" min="0" value="0"><br>
         <label for="input_h">s8 :</label>
-        <input type="number" id="input_h" min="0" value="1"><br>
+        <input type="number" id="input_h" min="0" value="0"><br>
         <label for="input_i">s9 :</label>
-        <input type="number" id="input_i" min="0" value="1"><br>
+        <input type="number" id="input_i" min="0" value="0"><br>
         <label for="input_j">s10:</label>
-        <input type="number" id="input_j" min="0" value="1"><br>
+        <input type="number" id="input_j" min="0" value="0"><br>
         <label for="input_k">precision:</label>
         <input type="number" id="input_k" min="20" value="512"><br>
     </form>
@@ -75,6 +75,15 @@
 
             let d = 2;//配列の次元
             let n = inputs[10].value;//精度(配列の大きさ)
+            let p=0;
+            let flag=0;
+            for(p = 0; p < 10; p++){
+                if(inputs[p].value === 0){
+                    flag++;
+                }
+            }
+            
+            d = flag;
 
             let Fibarray = fib(n);
             //Fibarrayが完成する
@@ -137,6 +146,10 @@
             }
             document.getElementById("result").innerHTML = resultString;
         }
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
