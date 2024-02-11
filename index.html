@@ -82,12 +82,26 @@
                     flag++;
                 }
             }
-            alert(flag);
 
             d = flag;
 
             let Fibarray = fib(n);
             //Fibarrayが完成する
+            if(d === 1){//1次元配列の時
+                let i1=0;
+                let y1;
+                let d1;
+                
+                let s1 = inputs[0].value;
+
+                let sum = new BigNumber(0);
+                for(i1 = 1; i1 <= n; i1++){
+                    y1 = Fibarray[i1-1].pow(s1);    //F_i1 ^ s1
+                    d1 = new BigNumber(1).dividedBy(y1);
+                    sum = sum.plus(d1);
+                }
+                results.push(sum.toString());
+            }
 
             if(d === 2){//2次元配列の時
 
