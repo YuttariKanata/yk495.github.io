@@ -62,7 +62,7 @@
 
             Fibarray[0] = new BigNumber(1);
             Fibarray[1] = new BigNumber(1);
-            for(let y0 = 2; y0 < n; y0++){
+            for(let y0 = 2; y0 <= n; y0++){
                 Fibarray[y0] = Fibarray[y0 - 1].plus(Fibarray[y0 - 2]);
             }
 
@@ -74,11 +74,11 @@
             var results = [];
 
             let d = 2;//配列の次元
-            let n = inputs[10].value;//精度(配列の大きさ)
+            let n = parseInt(inputs[10].value);//精度(配列の大きさ)
             let p=0;
             let flag=0;
             for(p = 0; p < 10; p++){
-                if(inputs[p].value == 0){
+                if(parseInt(inputs[p].value) == 0){
                     flag++;
                 }
             }
@@ -146,11 +146,6 @@
             }
             document.getElementById("result").innerHTML = resultString;
         }
-    </script>
-</body>
-</html>
-
-
     </script>
 </body>
 </html>
