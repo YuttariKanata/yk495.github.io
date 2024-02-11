@@ -58,7 +58,7 @@
 
     <script>
         function fib(n){
-            let Fibarray = new Array(n);
+            let Fibarray = new Array(n+1);
 
             Fibarray[0] = new BigNumber(1);
             Fibarray[1] = new BigNumber(1);
@@ -78,11 +78,11 @@
             let p=0;
             let flag=0;
             for(p = 0; p < 10; p++){
-                if(inputs[p].value === 0){
+                if(inputs[p].value == 0){
                     flag++;
                 }
             }
-            
+
             d = flag;
 
             let Fibarray = fib(n);
@@ -149,6 +149,7 @@
     </script>
 </body>
 </html>
+
 
     </script>
 </body>
