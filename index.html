@@ -62,7 +62,7 @@
 
             Fibarray[0] = new BigNumber(1);
             Fibarray[1] = new BigNumber(1);
-            for(let y0 = 2; y0 < n; y0++){
+            for(let y0 = 2; y0 <= n; y0++){
                 Fibarray[y0] = Fibarray[y0 - 1].plus(Fibarray[y0 - 2]);
             }
 
