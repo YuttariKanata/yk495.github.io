@@ -138,8 +138,8 @@
                 let s3 = inputs[2].value;
 
                 let sum = new BigNumber(0);
-                for(i1 = 1; i1 <= n; i1++){
-                    for(i2 = i1 + 1; i2 <= n; i2++){
+                for(i1 = 1; i1 <= n-2; i1++){
+                    for(i2 = i1 + 1; i2 <= n-1; i2++){
                         for(i3 = i2 + 1; i3 <= n; i3++){
                             y1 = Fibarray[i1-1].pow(s1);    //F_i1 ^ s1
                             y2 = Fibarray[i2-1].pow(s2);    //F_i2 ^ s2
