@@ -31,25 +31,25 @@
     <h1>Multiple Zeta Value Calculator</h1>
     <form id="inputForm">
         <label for="input_a">s1 :</label>
-        <input type="number" id="input_a" min="1" value="1"><br>
+        <input type="number" id="input_a" min="2" value="1"><br>
         <label for="input_b">s2 :</label>
-        <input type="number" id="input_b" min="1" value="1"><br>
+        <input type="number" id="input_b" min="3" value="1"><br>
         <label for="input_c">s3 :</label>
-        <input type="number" id="input_c" min="1" value="1"><br>
+        <input type="number" id="input_c" min="0" value="1"><br>
         <label for="input_d">s4 :</label>
-        <input type="number" id="input_d" min="1" value="1"><br>
+        <input type="number" id="input_d" min="0" value="1"><br>
         <label for="input_e">s5 :</label>
-        <input type="number" id="input_e" min="1" value="1"><br>
+        <input type="number" id="input_e" min="0" value="1"><br>
         <label for="input_f">s6 :</label>
-        <input type="number" id="input_f" min="1" value="1"><br>
+        <input type="number" id="input_f" min="0" value="1"><br>
         <label for="input_g">s7 :</label>
-        <input type="number" id="input_g" min="1" value="1"><br>
+        <input type="number" id="input_g" min="0" value="1"><br>
         <label for="input_h">s8 :</label>
-        <input type="number" id="input_h" min="1" value="1"><br>
+        <input type="number" id="input_h" min="0" value="1"><br>
         <label for="input_i">s9 :</label>
-        <input type="number" id="input_i" min="1" value="1"><br>
+        <input type="number" id="input_i" min="0" value="1"><br>
         <label for="input_j">s10:</label>
-        <input type="number" id="input_j" min="1" value="1"><br>
+        <input type="number" id="input_j" min="0" value="1"><br>
         <label for="input_k">precision:</label>
         <input type="number" id="input_k" min="20" value="512"><br>
     </form>
@@ -99,11 +99,41 @@
                     }
                 }
                 results.push(sum.toString());
+
+            }else if(d === 3){//3次元配列の時
+
+                let i1=0;
+                let i2=0;
+                let i3=0;
+                let y1;
+                let y2;
+                let y3;
+                let d1;
+                
+                let s1 = inputs[0].value;
+                let s2 = inputs[1].value;
+                let s3 = inputs[2].value;
+
+                let sum = new BigNumber(0);
+                for(i1 = 1; i1 <= n; i1++){
+                    for(i2 = i1 + 1; i2 <= n; i2++){
+                        for(i3 = i2 + 1; i3 <= n; i3++){
+                            y1 = Fibarray[i1-1].pow(s1);    //F_i1 ^ s1
+                            y2 = Fibarray[i2-1].pow(s2);    //F_i2 ^ s2
+                            y2 = Fibarray[i3-1].pow(s3);    //F_i2 ^ s2
+                            d1 = y1.times(y2);
+                            d1 = d1.times(y3);
+                            d1 = new BigNumber(1).dividedBy(d1);
+                            sum = sum.plus(d1);
+                        }
+                    }
+                }
+                results.push(sum.toString());
             }
 
             var resultString = "";
             for (var i = 0; i < results.length; i++) {
-                resultString += "ζ(" + String.fromCharCode(97 + i) + ") = " + results[i] + "<br>";
+                resultString += "ζ_F(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results[i] + "<br>";
             }
             document.getElementById("result").innerHTML = resultString;
         }
