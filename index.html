@@ -51,7 +51,7 @@
         <label for="input_j">s10:</label>
         <input type="number" id="input_j" min="0" value="0"><br>
         <label for="input_k">precision:</label>
-        <input type="number" id="input_k" min="20" value="512"><br>
+        <input type="number" id="input_k" min="20" value="20"><br>
     </form>
     <button onclick="calculate()">Calculate</button>
     <p id="result"></p>
@@ -132,6 +132,7 @@
                 let y2;
                 let y3;
                 let d1 = new BigNumber(0);
+                let d2 = new BigNumber(0);
                 
                 let s1 = inputs[0].value;
                 let s2 = inputs[1].value;
@@ -143,10 +144,10 @@
                         for(i3 = i2 + 1; i3 <= n; i3++){
                             y1 = Fibarray[i1-1].pow(s1);    //F_i1 ^ s1
                             y2 = Fibarray[i2-1].pow(s2);    //F_i2 ^ s2
-                            y2 = Fibarray[i3-1].pow(s3);    //F_i2 ^ s2
+                            y3 = Fibarray[i3-1].pow(s3);    //F_i3 ^ s3
                             d1 = y1.times(y2);
-                            d1 = d1.times(y3);
-                            d1 = BigNumber(1).dividedBy(d1);
+                            d2 = d1.times(y3);
+                            d1 = BigNumber(1).dividedBy(d2);
                             sum = sum.plus(d1);
                         }
                     }
