@@ -61,6 +61,7 @@
     <select id="outputSwitch" onchange="toggleOutput()">
         <option value="1">MFZV</option>
         <option value="2">MZV</option>
+        <option value="3">MZSV</option>
     </select><br>
 
     <button onclick="calculate()">Calculate</button>
@@ -91,6 +92,11 @@
                 var resultString = "";
                 resultString += "ζ(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
                 
+            } else if (outputType === "3"){
+                var results = MZSV(inputs);
+
+                var resultString = "";
+                resultString += "ζ(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
             }
 
             document.getElementById("result").innerHTML = resultString;
