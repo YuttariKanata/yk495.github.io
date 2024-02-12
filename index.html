@@ -55,11 +55,12 @@
         <label for="input_k">precision:</label>
         <input type="number" id="input_k" min="20" value="20"><br>
     </form>
+
     <!-- Switch -->
     <label for="outputSwitch">Output Type:</label>
     <select id="outputSwitch" onchange="toggleOutput()">
-        <option value="1">Type 1</option>
-        <option value="2">Type 2</option>
+        <option value="1">MFZV</option>
+        <option value="2">MZV</option>
     </select><br>
 
     <button onclick="calculate()">Calculate</button>
@@ -68,22 +69,28 @@
     <script>
         function calculate() {
             var inputs = document.getElementById("inputForm").getElementsByTagName("input");
-            var results = MFZV(inputs);
-
-            var resultString = "";
+            
             var outputType = document.getElementById("outputSwitch").value;
 
             // Check the output type and generate the result accordingly
             if (outputType === "1") {
-                for (var i = 0; i < results.length; i++) {
-                    resultString += "ζ_F(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results[i] + "<br>";
-                }
+
+                var results = MFZV(inputs);
+
+                var resultString = "";
+                
+                
+                resultString += "ζ_F(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results[1] + "<br>";
+                
             } else if (outputType === "2") {
                 // Generate different type of output
                 // Modify this part according to your requirements
-                for (var i = 0; i < results.length; i++) {
-                    resultString += "Another Type of Output: " + results[i] + "<br>";
-                }
+
+                var results = MZV(inputs);
+
+                var resultString = "";
+                resultString += "Another Type of Output: " + results[1] + "<br>";
+                
             }
 
             document.getElementById("result").innerHTML = resultString;
