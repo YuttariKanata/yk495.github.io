@@ -1057,8 +1057,8 @@ function MZSV(inputs) {
         let s3 = inputs[2].value;
 
         let sum = new BigNumber(0);
-        for(i1 = 1; i1 <= n-2; i1++){
-            for(i2 = i1; i2 <= n-1; i2++){
+        for(i1 = 1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
                 for(i3 = i2; i3 <= n; i3++){
                     y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                     y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1089,8 +1089,8 @@ function MZSV(inputs) {
         let s4 = inputs[3].value;
 
         let sum = new BigNumber(0);
-        for(i1 = 1; i1 <= n-2; i1++){
-            for(i2 = i1; i2 <= n-1; i2++){
+        for(i1 = 1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
                 for(i3 = i2; i3 <= n; i3++){
                     for(i4 = i3; i4 <= n; i4++){
                         y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
@@ -1143,15 +1143,15 @@ function MZSV(inputs) {
         let s10 = inputs[9].value;
 
         let sum = new BigNumber(0);
-        for(i1 = 1; i1 <= n-9; i1++){
-            for(i2 = i1; i2 <= n-8; i2++){
-                for(i3 = i2; i3 <= n-7; i3++){
-                    for(i4 = i3; i4 <= n-6; i4++){
-                        for(i5 = i4; i5 <= n-5; i5++){
-                            for(i6 = i5; i6 <= n-4; i6++){
-                                for(i7 = i6; i7 <= n-3; i7++){
-                                    for(i8 = i7; i8 <= n-2; i8++){
-                                        for(i9 = i8; i9 <= n-1; i9++){
+        for(i1 = 1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
+                        for(i5 = i4; i5 <= n; i5++){
+                            for(i6 = i5; i6 <= n; i6++){
+                                for(i7 = i6; i7 <= n; i7++){
+                                    for(i8 = i7; i8 <= n; i8++){
+                                        for(i9 = i8; i9 <= n; i9++){
                                             for(i10 = i9; i10 <= n; i10++){
                                                 y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                                                 y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1218,14 +1218,14 @@ function MZSV(inputs) {
         let s9 = inputs[8].value;
 
         let sum = new BigNumber(0);
-        for(i1 = 1; i1 <= n-8; i1++){
-            for(i2 = i1; i2 <= n-7; i2++){
-                for(i3 = i2; i3 <= n-6; i3++){
-                    for(i4 = i3; i4 <= n-5; i4++){
-                        for(i5 = i4; i5 <= n-4; i5++){
-                            for(i6 = i5; i6 <= n-3; i6++){
-                                for(i7 = i6; i7 <= n-2; i7++){
-                                    for(i8 = i7; i8 <= n-1; i8++){
+        for(i1 = 1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
+                        for(i5 = i4; i5 <= n; i5++){
+                            for(i6 = i5; i6 <= n; i6++){
+                                for(i7 = i6; i7 <= n; i7++){
+                                    for(i8 = i7; i8 <= n; i8++){
                                         for(i9 = i8; i9 <= n; i9++){
                                             y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                                             y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1286,13 +1286,13 @@ function MZSV(inputs) {
         let s8 = inputs[7].value;
 
         let sum = new BigNumber(0);
-        for(i1 =      1; i1 <= n-7; i1++){
-            for(i2 = i1; i2 <= n-6; i2++){
-                for(i3 = i2; i3 <= n-5; i3++){
-                    for(i4 = i3; i4 <= n-4; i4++){
-                        for(i5 = i4; i5 <= n-3; i5++){
-                            for(i6 = i5; i6 <= n-2; i6++){
-                                for(i7 = i6; i7 <= n-1; i7++){
+        for(i1 =      1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
+                        for(i5 = i4; i5 <= n; i5++){
+                            for(i6 = i5; i6 <= n; i6++){
+                                for(i7 = i6; i7 <= n; i7++){
                                     for(i8 = i7; i8 <= n; i8++){
                                         y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                                         y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1347,12 +1347,12 @@ function MZSV(inputs) {
         let s7 = inputs[6].value;
 
         let sum = new BigNumber(0);
-        for(i1 =      1; i1 <= n-6; i1++){
-            for(i2 = i1; i2 <= n-5; i2++){
-                for(i3 = i2; i3 <= n-4; i3++){
-                    for(i4 = i3; i4 <= n-3; i4++){
-                        for(i5 = i4; i5 <= n-2; i5++){
-                            for(i6 = i5; i6 <= n-1; i6++){
+        for(i1 =      1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
+                        for(i5 = i4; i5 <= n; i5++){
+                            for(i6 = i5; i6 <= n; i6++){
                                 for(i7 = i6; i7 <= n; i7++){
                                         y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                                         y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1401,11 +1401,11 @@ function MZSV(inputs) {
         let s6 = inputs[5].value;
 
         let sum = new BigNumber(0);
-        for(i1 =      1; i1 <= n-5; i1++){
-            for(i2 = i1; i2 <= n-4; i2++){
-                for(i3 = i2; i3 <= n-3; i3++){
-                    for(i4 = i3; i4 <= n-2; i4++){
-                        for(i5 = i4; i5 <= n-1; i5++){
+        for(i1 =      1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
+                        for(i5 = i4; i5 <= n; i5++){
                             for(i6 = i5; i6 <= n; i6++){
                                 y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                                 y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
@@ -1449,10 +1449,10 @@ function MZSV(inputs) {
         let s5 = inputs[4].value;
 
         let sum = new BigNumber(0);
-        for(i1 =      1; i1 <= n-4; i1++){
-            for(i2 = i1; i2 <= n-3; i2++){
-                for(i3 = i2; i3 <= n-2; i3++){
-                    for(i4 = i3; i4 <= n-1; i4++){
+        for(i1 =      1; i1 <= n; i1++){
+            for(i2 = i1; i2 <= n; i2++){
+                for(i3 = i2; i3 <= n; i3++){
+                    for(i4 = i3; i4 <= n; i4++){
                         for(i5 = i4; i5 <= n; i5++){
                             y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
                             y2 = BigNumber(i2).pow(s2);    //i2 ^ s2
