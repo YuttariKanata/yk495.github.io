@@ -81,10 +81,13 @@ function zeta(inputs){
 
 
 function zeta2(inputs){
+
+    let buffer = 0;
     var results = [];//結果を返す箱
 
     
-    let p = inputs[10].value;//上限     inputs[0 ~ 9]が変数
+    let p = Number(inputs[10].value);//上限     inputs[0 ~ 9]が変数
+
     let u = 0;
     let flag = 0;
     for (u = 0; u < 10; u++) {
@@ -94,14 +97,14 @@ function zeta2(inputs){
     }
     let r = flag;//0でないものの数 -> 変数の個数
 
-    let a = inputs[11].value;//下限の値。
+    let a = Number(inputs[11].value);//下限の値。
 
     let array1 = new Array(p-a-1);　//要素数p-a-1の配列(array)を作成
 
     let inputarr = new Array(10);   //変数を入れる箱
 
     for(let x1 = 0; x1 < 10; x1++){
-        inputarr[x1] = (-1)*(inputs[x1].value);
+        inputarr[x1] = (-1)*(Number(inputs[x1].value));
     }//すべてマイナスにする
 
     let first = new BigNumber(0);
