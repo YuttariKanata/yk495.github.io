@@ -97,6 +97,23 @@ function zeta2(inputs){
     }
     let r = Number(flag);//0でないものの数 -> 変数の個数
 
+    if(r == 1){
+        let i1=0;
+        let y1;
+        let d1 = new BigNumber(0);
+        
+        let s1 = inputs[0].value;
+
+        let sum = new BigNumber(0);
+
+        for(i1 = 1; i1 <= p; i1++){
+            y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
+            d1 = BigNumber(1).dividedBy(y1);
+            sum = sum.plus(d1);
+        }
+        results.push(sum.toString());
+    }
+
     let a = Number(inputs[11].value);//下限の値。
 
     let array1 = new Array(p-a-1);　//要素数p-a-1の配列(array)を作成
