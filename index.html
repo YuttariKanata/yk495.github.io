@@ -6,6 +6,7 @@
     <title>Multiple Fibonacci Zeta Value Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/bignumber.js/bignumber.min.js"></script>
     <script src="calculator.js"></script>
+    <script src="MZV.js"></script>
     <style>
         /* 全体のフォントを Consolas に設定 */
         body {
@@ -54,6 +55,8 @@
         <input type="number" id="input_j" min="0" value="0"><br>
         <label for="input_k">precision:</label>
         <input type="number" id="input_k" min="20" value="20"><br>
+        <label for="input_l">a:</label>
+        <input type="number" id="input_l" min="0" value="0"><br>
     </form>
 
     <!-- Switch -->
@@ -87,7 +90,7 @@
                 // Generate different type of output
                 // Modify this part according to your requirements
 
-                var results = MZV(inputs);
+                var results = zeta2(inputs);
 
                 var resultString = "";
                 resultString += "ζ(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
