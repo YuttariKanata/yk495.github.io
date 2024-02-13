@@ -127,15 +127,22 @@ function zeta2(inputs){
     console.log(r);
     console.log(inputarr[r-1]);
     console.log(bef.toString());
+    console.log("hay1");
     
     for(u = 0; u <= p-a-2; u++){
-        
-        
+
         console.log(array1[u].toString());
     }
     let coc;
 
     coc = core(array1,inputarr[r-2],p,r-2,a,bef);
+
+    console.log("hay2");
+
+    for(u = 0; u <= p-a-2; u++){
+        
+        console.log(coc.arr[u].toString());
+    }
 
     for(u = r-3; u >= 0; u--){
         coc = core(coc.arr,inputarr[u],p,u,a,coc.before);       //THIS IS THE CORE.
