@@ -195,5 +195,5 @@ function core(arr,msi1,p,i,a,before){
     }//登録者をすべて登録完了。
 
     //返すのは登録者リストとbeforeだけかな？
-    return {arr: arr, before: bef};
+    return {arr: outarr, before: bef};
 }
