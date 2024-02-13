@@ -1,85 +1,3 @@
-/*
-
-
-function zeta(inputs){
-    var results = [];
-    let d=0;
-    let n = inputs[10].value;//上限
-    let p = 0;
-    let flag = 0;
-    for (p = 0; p < 10; p++) {
-        if (inputs[p].value != 0) {
-            flag++;
-        }
-    }
-    d = flag;//0でないものの数
-
-    if(d === 1){
-        let n1 = 0;
-        let p1;
-        let d1;
-        let sum = new BigNumber(0);
-        let s1 = inputs[0].value;
-        for(n1 = 1; n1 <= n; n1++){
-            p1 = BigNumber(n1).pow(s1);
-            d1 = BigNumber(1).dividedBy(p1);
-            sum = sum.plus(d1);
-        }
-        results.push(sum.toString());
-
-    } else if(d === 2){
-        let n1 = 0;
-        
-        let p1;
-        let p2;
-        let d1;
-        let d2;
-        let sum1 = new BigNumber(0);
-        let sum2 = new BigNumber(0);
-        let s1 = inputs[0].value;
-        let s2 = inputs[1].value;
-        for(n1 = n; n1 >= 1; n--){
-            p2 = BigNumber(n1+1).pow(s2);
-            d2 = BigNumber(1).dividedBy(p2);
-            sum2 = sum2.plus(d2);
-
-
-            p1 = BigNumber(n1).pow(s1);
-            d1 = BigNumber(1).dividedBy(p1);
-            d1 = d1.times(sum2);
-            sum1 = sum1.plus(d1);
-
-        }
-        results.push(sum1.toString());
-    } else if(d === 3){
-        let n1 = 0;
-        
-        let p1;
-        let p2;
-        let p3;
-        let d1;
-        let d2;
-        let d3;
-        let sum1 = new BigNumber(0);
-        let sum2 = new BigNumber(0);
-        let sum3 = new BigNumber(0);
-        let s1 = inputs[0].value;
-        let s2 = inputs[1].value;
-        let s3 = inputs[2].value;
-        
-    }
-
-    return results;
-}
-
-*/
-
-
-
-
-
-
-
 function zeta2(inputs){
     var results = [];//結果を返す箱
 
@@ -123,7 +41,7 @@ function zeta2(inputs){
     console.log(bef);
 
     for(u = 0; u <= p-a-2; u++){
-        console.log(array1[u]);
+        console.log(array[u]);
     }
     let coc;
 
@@ -182,3 +100,5 @@ function core(arr,msi1,p,i,a,before){
     //返すのは登録者リストとbeforeだけかな？
     return {arr: arr, before: bef};
 }
+
+console.log("1");
