@@ -113,7 +113,7 @@ function zeta2(inputs){
     for(u = p-a-3; u >= 0; u--){
         add1 = BigNumber(u+a+r).pow(inputarr[r-1]);
         
-        first = first.plus(add);
+        first = first.plus(add1);
 
         array1[u] = first;
     }
