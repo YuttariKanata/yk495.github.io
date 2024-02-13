@@ -117,13 +117,15 @@ function zeta2(inputs){
 
         array1[u] = first;
     }
-
+    
     let bef = BigNumber(p+r-1).pow(inputarr[r-1]);
 
-    console.log(bef);
-
+    console.log(bef.toString());
+    
     for(u = 0; u <= p-a-2; u++){
-        console.log(array1[u]);
+        
+        
+        console.log(array1[u].toString());
     }
     let coc;
 
