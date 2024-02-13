@@ -74,8 +74,9 @@
 
     <script>
         function calculate() {
-            BigNumber.config({ DECIMAL_PLACES: Number(inputs[12].value) }); // 20桁の精度を設定
+            
             var inputs = document.getElementById("inputForm").getElementsByTagName("input");
+            BigNumber.config({ DECIMAL_PLACES: Number(inputs[12].value) }); // 20桁の精度を設定
             
             var outputType = document.getElementById("outputSwitch").value;
 
