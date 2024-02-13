@@ -95,7 +95,7 @@ function zeta2(inputs){
             flag++;
         }
     }
-    let r = flag;//0でないものの数 -> 変数の個数
+    let r = Number(flag);//0でないものの数 -> 変数の個数
 
     let a = Number(inputs[11].value);//下限の値。
 
@@ -154,17 +154,17 @@ function zeta2(inputs){
 function core(arr,msi1,p,i,a,before){ 
 
 
-    let outarr = new Array(p-a-1);
+    let outarr = new Array(Number(p)-Number(a)-1);
 
     let an = 0;
     let d = BigNumber(0);
     let sum = BigNumber(0);
-    an = p-a-2;
+    an = Number(p)-Number(a)-2;
 
-    d = BigNumber(an+a+i+1).pow(msi1);//糧
+    d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
     d = d.times(arr[an]);
     
-    let buf = BigNumber(p+i).pow(msi1);//今回
+    let buf = BigNumber(Number(p)+Number(i)).pow(msi1);//今回
     buf = buf.times(before);//今回＊前回
 
     let bef = buf;
@@ -177,7 +177,7 @@ function core(arr,msi1,p,i,a,before){
     for(an = p-a-3; an >= 0; an--){
         
 
-        d = BigNumber(an+a+i+1).pow(msi1);//掛け算する糧を作る
+        d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//掛け算する糧を作る
         d = d.times(arr[an]);
 
         sum = sum.plus(d);//糧の完成。前の登録者と合体。
