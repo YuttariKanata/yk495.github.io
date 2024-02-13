@@ -112,6 +112,8 @@ function zeta2(inputs){
             sum = sum.plus(d1);
         }
         results.push(sum.toString());
+
+        return results;
     }
 
     let a = Number(inputs[11].value);//下限の値。
