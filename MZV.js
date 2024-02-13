@@ -120,6 +120,11 @@ function zeta2(inputs){
 
     let bef = BigNumber(p+r-1).pow(inputarr[r-1]);
 
+    console.log(bef);
+
+    for(u = 0; u <= p-a-2; u++){
+        console.log(array[u]);
+    }
     let coc;
 
     coc = core(array1,inputarr[r-2],p,r-2,a,bef);
