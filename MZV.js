@@ -128,11 +128,12 @@ function zeta2(inputs){
         coc = core(coc.arr,inputarr[u],p,u,a,coc.before);       //THIS IS THE CORE.
     }
 
+    let answer = coc.arr[0];
+
+    results.push(answer.toString());
 
     
-
-    
-    return coc.arr[0];
+    return results;
 
 
 }
