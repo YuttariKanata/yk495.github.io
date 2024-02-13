@@ -94,7 +94,7 @@ function zeta2(inputs){
     }
     let r = flag;//0でないものの数 -> 変数の個数
 
-    let a = inputs[11];//下限の値。
+    let a = inputs[11].value;//下限の値。
 
     let array1 = new Array(p-a-1);　//要素数p-a-1の配列(array)を作成
 
