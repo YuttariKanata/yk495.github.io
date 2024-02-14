@@ -152,7 +152,7 @@ function Mzeta2(inputs){
     }*/
     let coc;
 
-    coc = core1(array1,inputarr[r-2],p,r-2,a,bef);
+    coc = coreMZV(array1,inputarr[r-2],p,r-2,a,bef);
 
     //console.log("hay2");
 

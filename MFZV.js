@@ -170,7 +170,7 @@ function MFzeta2(inputs){
     }s*/
     let coc;
 
-    coc = core(array1,inputarr[r-2],p,r-2,a,bef);
+    coc = coreMFZV(array1,inputarr[r-2],p,r-2,a,bef);
 
     //console.log("hay2");
 
