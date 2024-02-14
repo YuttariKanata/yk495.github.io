@@ -203,10 +203,10 @@ function coreMFZV(arr,msi1,p,i,a,before,fib){
     let sum = BigNumber(0);
     an = Number(p)-Number(a)-2;
 
-    d = fib[an+Number(a)+Number(i)+1].pow(msi1);//糧
+    d = BigNumber(fib[an+Number(a)+Number(i)+1]).pow(msi1);//糧
     d = d.times(arr[an]);
     
-    let buf = fib[Number(p)+Number(i)].pow(msi1);//今回
+    let buf = BigNumber(fib[Number(p)+Number(i)]).pow(msi1);//今回
     buf = buf.times(before);//今回＊前回
 
     let bef = buf;
@@ -219,7 +219,7 @@ function coreMFZV(arr,msi1,p,i,a,before,fib){
     for(an = p-a-3; an >= 0; an--){
         
 
-        d = fib[an+Number(a)+Number(i)+1].pow(msi1);//掛け算する糧を作る
+        d = BigNumber(fib[an+Number(a)+Number(i)+1]).pow(msi1);//掛け算する糧を作る
         d = d.times(arr[an]);
 
         sum = sum.plus(d);//糧の完成。前の登録者と合体。
