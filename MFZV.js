@@ -98,7 +98,7 @@ function MFzeta2(inputs){
     
     let p = Number(inputs[10].value);//上限     inputs[0 ~ 9]が変数
 
-    let Fibarray = fibfix(p+r);
+    
 
     let u = 0;
     let flag = 0;
@@ -108,6 +108,8 @@ function MFzeta2(inputs){
         }
     }
     let r = Number(flag);//0でないものの数 -> 変数の個数
+
+    let Fibarray = fibfix(p+r);
 
 
     if(r == 1){
