@@ -74,19 +74,31 @@ function zeta(inputs){
 
 */
 
+function fibfix(n) {
+    let Fibarray = new Array(Number(n) + 2);// 0 ~ n+1
+
+    Fibarray[0] = new BigNumber(0);
+    Fibarray[1] = new BigNumber(1);
+    for (let y0 = 2; y0 <= Number(n)+1; y0++) {
+        Fibarray[y0] = Fibarray[y0 - 1].plus(Fibarray[y0 - 2]);
+    }
+
+    return Fibarray;
+}
 
 
 
 
 
+function MFzeta2(inputs){
 
-function Mzeta2(inputs){
-
-    let buffer = 0;
+    
     var results = [];//結果を返す箱
 
     
     let p = Number(inputs[10].value);//上限     inputs[0 ~ 9]が変数
+
+    let Fibarray = fibfix(p);
 
     let u = 0;
     let flag = 0;
@@ -97,22 +109,26 @@ function Mzeta2(inputs){
     }
     let r = Number(flag);//0でないものの数 -> 変数の個数
 
+
     if(r == 1){
         let i1=0;
         let y1;
         
-        let s1 = (-1)*(Number(inputs[0].value));
+        let s1 = (-1)*(Number(inputs[0].value));//先に-1を掛けておく
 
         let sum = new BigNumber(0);
 
-        for(i1 = 1; i1 <= p; i1++){
-            y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
+        for(i1 = 1; i1 <= n; i1++){
+            y1 = Fibarray[i1].pow(s1);    //F_i1 ^ -s1
             sum = sum.plus(y1);
         }
         results.push(sum.toString());
 
         return results;
     }
+
+
+
 
     let a = Number(inputs[11].value);//下限の値。
 
@@ -125,20 +141,20 @@ function Mzeta2(inputs){
     }//すべてマイナスにする
 
     let first = new BigNumber(0);
-    let add1 = new BigNumber(p+r-2).pow(inputarr[r-1]);
-    let add2 = new BigNumber(p+r-1).pow(inputarr[r-1]);
+    let add1 = new Fibarray[p+r-2].pow(inputarr[r-1]);
+    let add2 = new Fibarray[p+r-1].pow(inputarr[r-1]);
     first = add1.plus(add2);
     array1[p-a-2] = first;
 
     for(u = p-a-3; u >= 0; u--){
-        add1 = BigNumber(u+a+r).pow(inputarr[r-1]);
+        add1 = Fibarray[u+a+r].pow(inputarr[r-1]);
         
         first = first.plus(add1);
 
         array1[u] = first;
     }
     
-    let bef = BigNumber(p+r-1).pow(inputarr[r-1]);
+    let bef = Fibarray[p+r-1].pow(inputarr[r-1]);
 
     //console.log(p);
     //console.log(r);
@@ -149,7 +165,7 @@ function Mzeta2(inputs){
     /*for(u = 0; u <= p-a-2; u++){
 
         console.log(array1[u].toString());
-    }*/
+    }s*/
     let coc;
 
     coc = core(array1,inputarr[r-2],p,r-2,a,bef);
@@ -185,10 +201,10 @@ function core(arr,msi1,p,i,a,before){
     let sum = BigNumber(0);
     an = Number(p)-Number(a)-2;
 
-    d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
+    d = Fibarray[an+Number(a)+Number(i)+1].pow(msi1);//糧
     d = d.times(arr[an]);
     
-    let buf = BigNumber(Number(p)+Number(i)).pow(msi1);//今回
+    let buf = Fibarray[Number(p)+Number(i)].pow(msi1);//今回
     buf = buf.times(before);//今回＊前回
 
     let bef = buf;
@@ -201,7 +217,7 @@ function core(arr,msi1,p,i,a,before){
     for(an = p-a-3; an >= 0; an--){
         
 
-        d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//掛け算する糧を作る
+        d = Fibarray[an+Number(a)+Number(i)+1].pow(msi1);//掛け算する糧を作る
         d = d.times(arr[an]);
 
         sum = sum.plus(d);//糧の完成。前の登録者と合体。

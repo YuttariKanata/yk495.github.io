@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bignumber.js/bignumber.min.js"></script>
     <script src="calculator.js"></script>
     <script src="MZV.js"></script>
+    <script src="MFZV.js"></script>
     <style>
         /* 全体のフォントを Consolas に設定 */
         body {
@@ -83,7 +84,7 @@
             // Check the output type and generate the result accordingly
             if (outputType === "1") {
 
-                var results = MFZV(inputs);
+                var results = MFzeta2(inputs);
 
                 var resultString = "";
                 
@@ -96,7 +97,7 @@
 
 
 
-                var results = zeta2(inputs);
+                var results = Mzeta2(inputs);
 
                 var resultString = "";
                 resultString += "ζ(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
