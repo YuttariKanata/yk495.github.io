@@ -143,8 +143,8 @@ function MFzeta2(inputs){
     }//すべてマイナスにする
 
     let first = new BigNumber(0);
-    let add1 = new Fibarray[p+r-2].pow(inputarr[r-1]);
-    let add2 = new Fibarray[p+r-1].pow(inputarr[r-1]);
+    let add1 = new BigNumber(Fibarray[p+r-2]).pow(inputarr[r-1]);
+    let add2 = new BigNumber(Fibarray[p+r-1]).pow(inputarr[r-1]);
     first = add1.plus(add2);
     array1[p-a-2] = first;
 
