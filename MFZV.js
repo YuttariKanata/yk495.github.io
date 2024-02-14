@@ -170,7 +170,7 @@ function MFzeta2(inputs){
     }s*/
     let coc;
 
-    coc = coreMFZV(array1,inputarr[r-2],p,r-2,a,bef);
+    coc = coreMFZV(array1,inputarr[r-2],p,r-2,a,bef,Fibarray);
 
     //console.log("hay2");
 
@@ -181,6 +181,9 @@ function MFzeta2(inputs){
 
     for(u = r-3; u >= 0; u--){
         coc = coreMFZV(coc.arr,inputarr[u],p,u,a,coc.before,Fibarray);       //THIS IS THE CORE.
+
+
+
     }
 
     let answer = coc.arr[0];
