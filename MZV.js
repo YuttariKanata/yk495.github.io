@@ -82,7 +82,7 @@ function zeta(inputs){
 
 function Mzeta2(inputs){
 
-    let buffer = 0;
+    
     var results = [];//結果を返す箱
 
     
@@ -152,7 +152,7 @@ function Mzeta2(inputs){
     }*/
     let coc;
 
-    coc = core(array1,inputarr[r-2],p,r-2,a,bef);
+    coc = core1(array1,inputarr[r-2],p,r-2,a,bef);
 
     //console.log("hay2");
 
@@ -162,7 +162,7 @@ function Mzeta2(inputs){
     }*/
 
     for(u = r-3; u >= 0; u--){
-        coc = core(coc.arr,inputarr[u],p,u,a,coc.before);       //THIS IS THE CORE.
+        coc = coreMZV(coc.arr,inputarr[u],p,u,a,coc.before);       //THIS IS THE CORE.
     }
 
     let answer = coc.arr[0];
@@ -175,7 +175,7 @@ function Mzeta2(inputs){
 
 }
 
-function core(arr,msi1,p,i,a,before){ 
+function coreMZV(arr,msi1,p,i,a,before){ 
 
 
     let outarr = new Array(Number(p)-Number(a)-1);

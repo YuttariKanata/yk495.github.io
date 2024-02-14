@@ -98,7 +98,7 @@ function MFzeta2(inputs){
     
     let p = Number(inputs[10].value);//上限     inputs[0 ~ 9]が変数
 
-    let Fibarray = fibfix(p);
+    let Fibarray = fibfix(p+r);
 
     let u = 0;
     let flag = 0;
@@ -118,7 +118,7 @@ function MFzeta2(inputs){
 
         let sum = new BigNumber(0);
 
-        for(i1 = 1; i1 <= n; i1++){
+        for(i1 = 1; i1 <= p; i1++){
             y1 = Fibarray[i1].pow(s1);    //F_i1 ^ -s1
             sum = sum.plus(y1);
         }
@@ -178,7 +178,7 @@ function MFzeta2(inputs){
     }*/
 
     for(u = r-3; u >= 0; u--){
-        coc = core(coc.arr,inputarr[u],p,u,a,coc.before);       //THIS IS THE CORE.
+        coc = coreMFZV(coc.arr,inputarr[u],p,u,a,coc.before,Fibarray);       //THIS IS THE CORE.
     }
 
     let answer = coc.arr[0];
@@ -191,7 +191,7 @@ function MFzeta2(inputs){
 
 }
 
-function core(arr,msi1,p,i,a,before){ 
+function coreMFZV(arr,msi1,p,i,a,before,fib){ 
 
 
     let outarr = new Array(Number(p)-Number(a)-1);
@@ -201,10 +201,10 @@ function core(arr,msi1,p,i,a,before){
     let sum = BigNumber(0);
     an = Number(p)-Number(a)-2;
 
-    d = Fibarray[an+Number(a)+Number(i)+1].pow(msi1);//糧
+    d = fib[an+Number(a)+Number(i)+1].pow(msi1);//糧
     d = d.times(arr[an]);
     
-    let buf = Fibarray[Number(p)+Number(i)].pow(msi1);//今回
+    let buf = fib[Number(p)+Number(i)].pow(msi1);//今回
     buf = buf.times(before);//今回＊前回
 
     let bef = buf;
@@ -217,7 +217,7 @@ function core(arr,msi1,p,i,a,before){
     for(an = p-a-3; an >= 0; an--){
         
 
-        d = Fibarray[an+Number(a)+Number(i)+1].pow(msi1);//掛け算する糧を作る
+        d = fib[an+Number(a)+Number(i)+1].pow(msi1);//掛け算する糧を作る
         d = d.times(arr[an]);
 
         sum = sum.plus(d);//糧の完成。前の登録者と合体。
