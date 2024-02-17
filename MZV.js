@@ -97,6 +97,7 @@ function Mzeta2(inputs){
     }
     let r = Number(flag);//0でないものの数 -> 変数の個数
 
+    let a = Number(inputs[11].value);//下限の値。
     if(r == 1){
         let i1=0;
         let y1;
@@ -105,7 +106,7 @@ function Mzeta2(inputs){
 
         let sum = new BigNumber(0);
 
-        for(i1 = 1; i1 <= p; i1++){
+        for(i1 = 1+a; i1 <= p; i1++){
             y1 = BigNumber(i1).pow(s1);    //i1 ^ s1
             sum = sum.plus(y1);
         }
@@ -114,7 +115,6 @@ function Mzeta2(inputs){
         return results;
     }
 
-    let a = Number(inputs[11].value);//下限の値。
 
     let array1 = new Array(p-a-1);　//要素数p-a-1の配列(array)を作成
 

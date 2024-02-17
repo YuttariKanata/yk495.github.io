@@ -110,7 +110,7 @@ function MFzeta2(inputs){
     let r = Number(flag);//0でないものの数 -> 変数の個数
 
     let Fibarray = fibfix(p+r);
-
+    let a = Number(inputs[11].value);//下限の値。
 
     if(r == 1){
         let i1=0;
@@ -120,7 +120,7 @@ function MFzeta2(inputs){
 
         let sum = new BigNumber(0);
 
-        for(i1 = 1; i1 <= p; i1++){
+        for(i1 = a+1; i1 <= p; i1++){
             y1 = Fibarray[i1].pow(s1);    //F_i1 ^ -s1
             sum = sum.plus(y1);
         }
@@ -132,7 +132,7 @@ function MFzeta2(inputs){
 
 
 
-    let a = Number(inputs[11].value);//下限の値。
+
 
     let array1 = new Array(p-a-1);　//要素数p-a-1の配列(array)を作成
 

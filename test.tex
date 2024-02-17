@@ -1,0 +1,28 @@
+\documentclass{jlreq}
+\begin{document}
+
+
+
+
+\begin{eqnarray*}
+  \zeta_{a}^{p}(s_1,s_2,\dots,s_r) &:=& \sum_{a<n_1<n_2< \dots <n_r<p+r}F_{n_1}^{-s_1}F_{n_2}^{-s_2}\dots F_{n_r}^{-s_r} \\
+  &=& \sum_{a+1<n_2<n_3< \dots <p+r}F_{a+1}^{-s_1}F_{n_2}^{-s_2}F_{n_3}^{-s_3} \dots F_{n_r}^{-s_r} + \sum_{a+1<n_1<n_2< \dots <n_r<p+r}F_{n_1}^{-s_1}F_{n_2}^{-s_2}\dots F_{n_r}^{-s_r} \\
+  &=& F_{a+1}^{-s_1} \zeta_{a+1}^{p+1}(s_2,s_3,\dots,s_r) + \zeta_{a+1}^{p}(s_1,s_2,\dots,s_r)
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+
+    \zeta{\small F}_{a}^{p}(s_1,s_2,\dots,s_r) 
+  
+  &:=& \sum_{a<n_1<n_2< \dots <n_r<p+r}F_{n_1}^{-s_1}F_{n_2}^{-s_2}\dots F_{n_r}^{-s_r} \\
+  
+    &=& \sum_{a+1<n_2<n_3< \dots <p+r}F_{a+1}^{-s_1}F_{n_2}^{-s_2}F_{n_3}^{-s_3} \dots F_{n_r}^{-s_r} \\ 
+  
+  &+& \sum_{a+1<n_1<n_2< \dots <n_r<p+r}F_{n_1}^{-s_1}F_{n_2}^{-s_2}\dots F_{n_r}^{-s_r} \\
+  
+    &=& F_{a+1}^{-s_1}  \zeta{\small F}_{a+1}^{p+1}(s_2,s_3,\dots,s_r) + \zeta{\small F}_{a+1}^{p}(s_1,s_2,\dots,s_r)
+  
+  \end{eqnarray*}
+
+\end{document}
