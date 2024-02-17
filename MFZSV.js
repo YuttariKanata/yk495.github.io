@@ -60,7 +60,7 @@ function MFSzeta2(inputs){
 
 
 
-    let Fibarray  = fibfix(a,p+r);  //Fnが格納されている   Fibarray[n] = Fn
+    let Fibarray  = fibfix(p+r);  //Fnが格納されている   Fibarray[n] = Fn
     let Tauarray  = taufix(a,p+r);  //tauが格納されている  Tauarray[n] = Tau^n
     let Mphiarray = phifix(a,p+r);  //-phiが格納されている Fibarray[n] = (-phi)^n
 
