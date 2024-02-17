@@ -124,7 +124,7 @@ function MFSzeta2(inputs){
         array1[u] = first;
     }//最初の配列を完成させる
     
-    let bef = Fibarray[p+r-1].pow(inputarr[r-1]);
+    let bef = MpFibarray[p+r-1].pow(inputarr[r-1]);
     bef = Tauarray[p+r-1].times(inputarr[r-1]);
 
     /*console.log(p);
