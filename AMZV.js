@@ -182,7 +182,7 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
 
         d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//掛け算する糧を作る
         if((an+Number(a)+Number(i)+1) % 2 == 1){
-            buf = buf.times(ipcar[msi1]);
+            d = d.times(ipcar[msi1]);
         }
         d = d.times(arr[an]);
 
