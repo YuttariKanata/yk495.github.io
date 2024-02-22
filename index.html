@@ -36,29 +36,51 @@
     <form id="inputForm">
         <!-- 入力フィールド -->
         <label for="input_a">s1 :</label>
-        <input type="number" id="input_a" min="0" value="2"><br>
+        <input type="number" id="input_a" min="0" value="2">
+        <button onclick="resetField('input_a')">Reset</button><br>
+
         <label for="input_b">s2 :</label>
-        <input type="number" id="input_b" min="0" value="3"><br>
+        <input type="number" id="input_b" min="0" value="3">
+        <button onclick="resetField('input_b')">Reset</button><br>
+
         <label for="input_c">s3 :</label>
-        <input type="number" id="input_c" min="0" value="0"><br>
+        <input type="number" id="input_c" min="0" value="0">
+        <button onclick="resetField('input_c')">Reset</button><br>
+
         <label for="input_d">s4 :</label>
-        <input type="number" id="input_d" min="0" value="0"><br>
+        <input type="number" id="input_d" min="0" value="0">
+        <button onclick="resetField('input_d')">Reset</button><br>
+
         <label for="input_e">s5 :</label>
-        <input type="number" id="input_e" min="0" value="0"><br>
+        <input type="number" id="input_e" min="0" value="0">
+        <button onclick="resetField('input_e')">Reset</button><br>
+
         <label for="input_f">s6 :</label>
-        <input type="number" id="input_f" min="0" value="0"><br>
+        <input type="number" id="input_f" min="0" value="0">
+        <button onclick="resetField('input_f')">Reset</button><br>
+
         <label for="input_g">s7 :</label>
-        <input type="number" id="input_g" min="0" value="0"><br>
+        <input type="number" id="input_g" min="0" value="0">
+        <button onclick="resetField('input_g')">Reset</button><br>
+
         <label for="input_h">s8 :</label>
-        <input type="number" id="input_h" min="0" value="0"><br>
+        <input type="number" id="input_h" min="0" value="0">
+        <button onclick="resetField('input_h')">Reset</button><br>
+
         <label for="input_i">s9 :</label>
-        <input type="number" id="input_i" min="0" value="0"><br>
+        <input type="number" id="input_i" min="0" value="0">
+        <button onclick="resetField('input_i')">Reset</button><br>
+
         <label for="input_j">s10:</label>
-        <input type="number" id="input_j" min="0" value="0"><br>
+        <input type="number" id="input_j" min="0" value="0">
+        <button onclick="resetField('input_j')">Reset</button><br>
+
         <label for="input_k">iterations:</label>
         <input type="number" id="input_k" min="5" value="20"><br>
+
         <label for="input_l">a:</label>
         <input type="number" id="input_l" min="0" value="0"><br>
+
         <label for="input_m">precision:</label>
         <input type="number" id="input_m" min="20" value="20"><br>
     </form>
@@ -122,6 +144,10 @@
         function toggleOutput() {
             // This function could be used to handle any actions when the output type is toggled
             // You can add more complex logic here if needed
+        }
+
+        function resetField(fieldId) {
+            document.getElementById(fieldId).value = 0; // フィールドの値をリセット
         }
     </script>
 </body>
