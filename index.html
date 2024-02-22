@@ -172,7 +172,7 @@
             buttonStates = {};
             for (var i = 0; i < checkboxes.length; i++) {
                 var inputId = checkboxes[i].id.replace("_checkbox", ""); // チェックボックスのidから対応する入力フィールドのidを取得
-                buttonStates[inputId] = checkboxes[i].checked; // チェックボックスの状態を設定
+                buttonStates[i] = checkboxes[i].checked; // チェックボックスの状態を設定
             }
             console.log("ボタンの状態を記録しました:", buttonStates);
             return buttonStates;
