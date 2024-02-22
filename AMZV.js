@@ -124,7 +124,11 @@ function AMZV(inputs,buttons){
     }*/
     let coc;
 
+    console.log(array1);
+
     coc = coreAMZV(array1,inputarr[r-2],p,r-2,a,bef,ipcarr);
+
+    console.log(coc.arr);
 
     //console.log("hay2");
 
@@ -135,6 +139,9 @@ function AMZV(inputs,buttons){
 
     for(u = r-3; u >= 0; u--){
         coc = coreAMZV(coc.arr,inputarr[u],p,u,a,coc.before,ipcarr);       //THIS IS THE CORE.
+
+
+        console.log(coc.arr);
     }
 
     let answer = coc.arr[0];
@@ -159,13 +166,13 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
 
     d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
     if((an+Number(a)+Number(i)+1) % 2 == 1){
-        d = d.times(ipcar[msi1]);
+        d = d.times(Number(ipcar[msi1]));
     }
     d = d.times(arr[an]);
     
     let buf = BigNumber(Number(p)+Number(i)).pow(msi1);//今回
     if((Number(p)+Number(i)) % 2 == 1){
-        buf = buf.times(ipcar[msi1]);
+        buf = buf.times(Number(ipcar[msi1]));
     }
 
     buf = buf.times(before);//今回＊前回
@@ -182,7 +189,7 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
 
         d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//掛け算する糧を作る
         if((an+Number(a)+Number(i)+1) % 2 == 1){
-            d = d.times(ipcar[msi1]);
+            d = d.times(Number(ipcar[msi1]));
         }
         d = d.times(arr[an]);
 
