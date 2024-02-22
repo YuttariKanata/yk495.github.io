@@ -37,43 +37,43 @@
         <!-- 入力フィールド -->
         <label for="input_a">s1 :</label>
         <input type="number" id="input_a" min="0" value="2">
-        <button onclick="resetField('input_a')">Reset</button><br>
+        <input type="checkbox" id="input_a_checkbox"><br>
 
         <label for="input_b">s2 :</label>
         <input type="number" id="input_b" min="0" value="3">
-        <button onclick="resetField('input_b')">Reset</button><br>
+        <input type="checkbox" id="input_b_checkbox"><br>
 
         <label for="input_c">s3 :</label>
         <input type="number" id="input_c" min="0" value="0">
-        <button onclick="resetField('input_c')">Reset</button><br>
+        <input type="checkbox" id="input_c_checkbox"><br>
 
         <label for="input_d">s4 :</label>
         <input type="number" id="input_d" min="0" value="0">
-        <button onclick="resetField('input_d')">Reset</button><br>
+        <input type="checkbox" id="input_d_checkbox"><br>
 
         <label for="input_e">s5 :</label>
         <input type="number" id="input_e" min="0" value="0">
-        <button onclick="resetField('input_e')">Reset</button><br>
+        <input type="checkbox" id="input_e_checkbox"><br>
 
         <label for="input_f">s6 :</label>
         <input type="number" id="input_f" min="0" value="0">
-        <button onclick="resetField('input_f')">Reset</button><br>
+        <input type="checkbox" id="input_f_checkbox"><br>
 
         <label for="input_g">s7 :</label>
         <input type="number" id="input_g" min="0" value="0">
-        <button onclick="resetField('input_g')">Reset</button><br>
+        <input type="checkbox" id="input_g_checkbox"><br>
 
         <label for="input_h">s8 :</label>
         <input type="number" id="input_h" min="0" value="0">
-        <button onclick="resetField('input_h')">Reset</button><br>
+        <input type="checkbox" id="input_h_checkbox"><br>
 
         <label for="input_i">s9 :</label>
         <input type="number" id="input_i" min="0" value="0">
-        <button onclick="resetField('input_i')">Reset</button><br>
+        <input type="checkbox" id="input_i_checkbox"><br>
 
         <label for="input_j">s10:</label>
         <input type="number" id="input_j" min="0" value="0">
-        <button onclick="resetField('input_j')">Reset</button><br>
+        <input type="checkbox" id="input_j_checkbox"><br>
 
         <label for="input_k">iterations:</label>
         <input type="number" id="input_k" min="5" value="20"><br>
@@ -92,18 +92,17 @@
         <option value="2">MZV</option>
         <option value="3">MZSV</option>
         <option value="4">MZSFV</option>
-        <option value="4">AMZV</option>
     </select><br>
 
     <button onclick="calculate()">Calculate</button>
     <p id="result"></p>
 
     <script>
-        var buttonStates = []; // ボタンの状態を記録する配列
+        var buttonStates = {}; // ボタンの状態を記録するオブジェクト
 
         function calculate() {
             // ボタンの状態を初期化
-            buttonStates = [];
+            buttonStates = {};
             
             var inputs = document.getElementById("inputForm").getElementsByTagName("input");
             BigNumber.config({ DECIMAL_PLACES: Number(inputs[12].value) }); // 20桁の精度を設定
@@ -143,20 +142,19 @@
             // You can add more complex logic here if needed
         }
 
-        function resetField(fieldId) {
-            //document.getElementById(fieldId).value = 0; // フィールドの値をリセット   リセットはしなくていい
+        function toggleButton(fieldId) {
+            var checkbox = document.getElementById(fieldId + "_checkbox"); // 対応するチェックボックスを取得
+
+            buttonStates[fieldId] = checkbox.checked; // チェックボックスの状態を記録
         }
 
         function recordButtonStates() {
             // 全てのボタンの状態を記録
-            var buttons = document.getElementsByTagName("button");
-            buttonStates = [];
-            for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].disabled) {
-                    buttonStates.push(0); // 無効ならば0を追加
-                } else {
-                    buttonStates.push(1); // 有効ならば1を追加
-                }
+            var checkboxes = document.querySelectorAll("input[type=checkbox]");
+            buttonStates = {};
+            for (var i = 0; i < checkboxes.length; i++) {
+                var inputId = checkboxes[i].id.replace("_checkbox", ""); // チェックボックスのidから対応する入力フィールドのidを取得
+                buttonStates[inputId] = checkboxes[i].checked; // チェックボックスの状態を設定
             }
             console.log("ボタンの状態を記録しました:", buttonStates);
         }
