@@ -75,11 +75,13 @@ function AMZV(inputs,buttons){
     let ipcarr = new Array(10);
     for(x1 = 0; x1 < 10; x1 ++){
         if(buttons[x1] = true){
-            ipcarr[x1] = 1;
+            ipcarr[x1] =  1;
         }else{
             ipcarr[x1] = -1;
         }
     }
+
+    console.log(ipcarr);
 
     let first = new BigNumber(0);
     let add1 = new BigNumber(p+r-2).pow(inputarr[r-1]);
