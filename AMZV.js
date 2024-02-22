@@ -15,7 +15,7 @@
 
 
 
-function AMzeta(inputs){
+function AMZV(inputs){
 
     
     var results = [];//結果を返す箱

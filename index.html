@@ -92,13 +92,18 @@
         <option value="2">MZV</option>
         <option value="3">MZSV</option>
         <option value="4">MZSFV</option>
+        <option value="4">AMZV</option>
     </select><br>
 
     <button onclick="calculate()">Calculate</button>
     <p id="result"></p>
 
     <script>
+        var buttonStates = []; // ボタンの状態を記録する配列
+
         function calculate() {
+            // ボタンの状態を初期化
+            buttonStates = [];
             
             var inputs = document.getElementById("inputForm").getElementsByTagName("input");
             BigNumber.config({ DECIMAL_PLACES: Number(inputs[12].value) }); // 20桁の精度を設定
@@ -107,38 +112,30 @@
 
             // Check the output type and generate the result accordingly
             if (outputType === "1") {
-
                 var results = MFzeta2(inputs);
-
                 var resultString = "";
-                
-                
                 resultString += "ζ_F(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
                 
             } else if (outputType === "2") {
-                // Generate different type of output
-                // Modify this part according to your requirements
-
-
-
                 var results = Mzeta2(inputs);
-
                 var resultString = "";
                 resultString += "ζ(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
                 
-            } else if (outputType === "3"){
+            } else if (outputType === "3") {
                 var results = MZSV(inputs);
-
                 var resultString = "";
                 resultString += "ζ*(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
-            } else if (outputType === "4"){
+                
+            } else if (outputType === "4") {
                 var results = MFSzeta2(inputs);
-
                 var resultString = "";
                 resultString += "ζ_F^♠(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
             }
 
             document.getElementById("result").innerHTML = resultString;
+            
+            // ボタンの状態を記録
+            recordButtonStates();
         }
 
         function toggleOutput() {
@@ -147,7 +144,21 @@
         }
 
         function resetField(fieldId) {
-            document.getElementById(fieldId).value = 0; // フィールドの値をリセット
+            //document.getElementById(fieldId).value = 0; // フィールドの値をリセット   リセットはしなくていい
+        }
+
+        function recordButtonStates() {
+            // 全てのボタンの状態を記録
+            var buttons = document.getElementsByTagName("button");
+            buttonStates = [];
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].disabled) {
+                    buttonStates.push(0); // 無効ならば0を追加
+                } else {
+                    buttonStates.push(1); // 有効ならば1を追加
+                }
+            }
+            console.log("ボタンの状態を記録しました:", buttonStates);
         }
     </script>
 </body>
