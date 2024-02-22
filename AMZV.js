@@ -82,6 +82,7 @@ function AMZV(inputs,buttons){
     }
 
     console.log(ipcarr);
+    console.log(buttons);
 
     let first = new BigNumber(0);
     let add1 = new BigNumber(p+r-2).pow(inputarr[r-1]);
