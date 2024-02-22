@@ -9,6 +9,7 @@
     <script src="MZV.js"></script>
     <script src="MFZV.js"></script>
     <script src="MFZSV.js"></script>
+    <script src="AMZV.js"></script>
     <style>
         /* 全体のフォントを Consolas に設定 */
         body {
@@ -92,6 +93,7 @@
         <option value="2">MZV</option>
         <option value="3">MZSV</option>
         <option value="4">MZSFV</option>
+        <option value="5">AMZV</option>
     </select><br>
 
     <button onclick="calculate()">Calculate</button>
@@ -117,6 +119,9 @@
             
             var outputType = document.getElementById("outputSwitch").value;
 
+            // ボタンの状態を記録
+            var buttons = recordButtonStates();
+
             // Check the output type and generate the result accordingly
             if (outputType === "1") {
                 var results = MFzeta2(inputs);
@@ -137,12 +142,15 @@
                 var results = MFSzeta2(inputs);
                 var resultString = "";
                 resultString += "ζ_F^♠(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10)" + "<br>" + " = " + results + "<br>";
+            } else if (outputType === "5") {
+                var results = AMZV(ihputs,buttons);
+                var resultString = "";
+                resultString += "AMZV result" + "<br>" + " = " + results + "<br>";
             }
 
             document.getElementById("result").innerHTML = resultString;
             
-            // ボタンの状態を記録
-            recordButtonStates();
+            
         }
 
         function toggleOutput() {
@@ -165,6 +173,7 @@
                 buttonStates[inputId] = checkboxes[i].checked; // チェックボックスの状態を設定
             }
             console.log("ボタンの状態を記録しました:", buttonStates);
+            return buttonStates;
         }
     </script>
 </body>
