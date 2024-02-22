@@ -104,7 +104,15 @@
             // ボタンの状態を初期化
             buttonStates = {};
             
-            var inputs = document.getElementById("inputForm").getElementsByTagName("input");
+            var Numberinputs = document.getElementById("inputForm").getElementsByTagName("input");
+            var inputs = [];
+
+            for(var i = 0;i < Numberinputs.length; i++){
+                if(Numberinputs[i].type === "number"){
+                    inputs.push(Numberinputs[i]);
+                }
+
+            }
             BigNumber.config({ DECIMAL_PLACES: Number(inputs[12].value) }); // 20桁の精度を設定
             
             var outputType = document.getElementById("outputSwitch").value;
