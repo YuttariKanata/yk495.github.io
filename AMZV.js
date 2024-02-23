@@ -161,19 +161,21 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
     let outarr = new Array(Number(p)-Number(a)-1);
 
     let an = 0;
-    let d = BigNumber(0);
-    let sum = BigNumber(0);
+    let d = new BigNumber(0);
+    let sum =  new BigNumber(0);
     an = Number(p)-Number(a)-2;
+    let ipx = new BigNumber(Number(ipcar[msi1]));
+    console.log("ipx:",ipx,"msi1:",msi1);
 
     d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
     if((an+Number(a)+Number(i)+1) % 2 == 1){
-        d = d.times(Number(ipcar[msi1]));
+        d = d.times(ipx);
     }
     d = d.times(arr[an]);
     
     let buf = BigNumber(Number(p)+Number(i)).pow(msi1);//今回
     if((Number(p)+Number(i)) % 2 == 1){
-        buf = buf.times(Number(ipcar[msi1]));
+        buf = buf.times(ipx);
     }
 
     buf = buf.times(before);//今回＊前回
@@ -190,7 +192,7 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
 
         d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//掛け算する糧を作る
         if((an+Number(a)+Number(i)+1) % 2 == 1){
-            d = d.times(Number(ipcar[msi1]));
+            d = d.times(ipx);
         }
         d = d.times(arr[an]);
 
