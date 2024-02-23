@@ -41,9 +41,9 @@ function AMZV(inputs,buttons){
 
         let ipc = Number((buttons[0]));
         if(ipc == 1){
-            ipc = 1;
-        }else{
             ipc = -1;
+        }else{
+            ipc = 1;
         }
         console.log(ipc);
         
@@ -76,9 +76,9 @@ function AMZV(inputs,buttons){
     let ipcarr = new Array(10);
     for(x1 = 0; x1 < 10; x1 ++){
         if(buttons[x1]){
-            ipcarr[x1] = 1;
-        }else{
             ipcarr[x1] = -1;
+        }else{
+            ipcarr[x1] = 1;
         }
     }
 
