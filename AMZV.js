@@ -45,7 +45,7 @@ function AMZV(inputs,buttons){
         }else{
             ipc = 1;
         }
-        console.log(ipc);
+        //console.log(ipc);
         
         let s1 = (-1)*(Number(inputs[0].value));
 
@@ -82,8 +82,8 @@ function AMZV(inputs,buttons){
         }
     }
 
-    console.log(ipcarr);
-    console.log(buttons);
+    //console.log(ipcarr);
+    //console.log(buttons);
 
     let first = new BigNumber(0);
     let add1 = new BigNumber(p+r-2).pow(inputarr[r-1]);
@@ -125,11 +125,11 @@ function AMZV(inputs,buttons){
     }*/
     let coc;
 
-    console.log(array1);
+    //console.log(array1);
 
     coc = coreAMZV(array1,inputarr[r-2],p,r-2,a,bef,ipcarr);
 
-    console.log(coc.arr);
+    //console.log(coc.arr);
 
     //console.log("hay2");
 
@@ -143,7 +143,7 @@ function AMZV(inputs,buttons){
  
         
 
-        console.log(coc.arr);
+        //console.log(coc.arr);
     }
 
     let answer = coc.arr[0];
@@ -167,7 +167,7 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
     an = Number(p)-Number(a)-2;
     let ipx = new Number(ipcar[i]);
     
-    console.log("ipx:",ipx,"msi1:",msi1);
+    //console.log("ipx:",ipx,"msi1:",msi1);
 
     d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
     if((an+Number(a)+Number(i)+1) % 2 == 1){
