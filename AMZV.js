@@ -39,12 +39,13 @@ function AMZV(inputs,buttons){
         let i1=0;
         let y1;
 
-        let ipc = Number((buttons[0].value));
+        let ipc = Number((buttons[0]));
         if(ipc == 1){
             ipc = 1;
         }else{
             ipc = -1;
         }
+        console.log(ipc);
         
         let s1 = (-1)*(Number(inputs[0].value));
 
