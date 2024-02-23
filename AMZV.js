@@ -165,6 +165,7 @@ function coreAMZV(arr,msi1,p,i,a,before,ipcar){
     let sum =  new BigNumber(0);
     an = Number(p)-Number(a)-2;
     let ipx = new Number(ipcar[i]);
+    
     console.log("ipx:",ipx,"msi1:",msi1);
 
     d = BigNumber(an+Number(a)+Number(i)+1).pow(msi1);//糧
