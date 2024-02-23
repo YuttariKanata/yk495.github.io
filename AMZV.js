@@ -139,7 +139,8 @@ function AMZV(inputs,buttons){
 
     for(u = r-3; u >= 0; u--){
         coc = coreAMZV(coc.arr,inputarr[u],p,u,a,coc.before,ipcarr);       //THIS IS THE CORE.
-
+ 
+        
 
         console.log(coc.arr);
     }
