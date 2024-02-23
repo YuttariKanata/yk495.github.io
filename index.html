@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Fibonacci Zeta Value Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/bignumber.js/bignumber.min.js"></script>
-    <script src="calculator.js"></script>
-    <script src="MZV.js"></script>
-    <script src="MFZV.js"></script>
-    <script src="MFZSV.js"></script>
-    <script src="AMZV.js"></script>
+    <script src="src/calculator.js"></script>
+    <script src="src/MZV.js"></script>
+    <script src="src/MFZV.js"></script>
+    <script src="src/MFZSV.js"></script>
+    <script src="src/AMZV.js"></script>
     <style>
         /* 全体のフォントを Consolas に設定 */
         body {
@@ -122,7 +122,7 @@
             // ボタンの状態を記録
             var buttons = recordButtonStates();
 
-            console.log(buttons);
+            //console.log(buttons);
 
             // Check the output type and generate the result accordingly
             if (outputType === "1") {
@@ -174,10 +174,10 @@
                 var inputId = checkboxes[i].id.replace("_checkbox", ""); // チェックボックスのidから対応する入力フィールドのidを取得
                 buttonStates[i] = checkboxes[i].checked; // チェックボックスの状態を設定
             }
-            console.log("ボタンの状態を記録しました:", buttonStates);
+            //console.log("ボタンの状態を記録しました:", buttonStates);
             return buttonStates;
         }
     </script>
-    
+
 </body>
 </html>
